@@ -34,6 +34,11 @@ if($_POST['send'] && !empty($_POST['email']) && !empty($_POST['category']) && !e
 	$header = $_POST['header'];
 	$textarea = $_POST['textarea'];
 
+	if (!mkdir("/code/task3/$category") && !is_dir("/code/task3/$category"))
+	{
+		throw new \RuntimeException(sprintf('Directory "%s" was not created', "/code/task3/$category"));
+	}
+	
 	$f = fopen("$category/$header.txt", 'ab');
 	fwrite($f, "$email\n");
 	fwrite($f, $textarea);
