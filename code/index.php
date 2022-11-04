@@ -1,18 +1,11 @@
-<?php
-function task1(){
-	$str = 'ahb acb aeb aeeb adcb axeb asd abc dcab';
-	preg_match_all('/a..b/', $str, $result);
-	print_r($result);
+<form action="task1.php">
+	<input type="submit" value="task1">
+</form>
 
-	$str = 'a1b2c3';
-	$result = preg_replace_callback(
-		'/\d/',
-		function($digits){
-			return $digits[0]**3;
-		},
-		$str);
-	echo '</br>';
-	echo $result;
-}
+<form action="task2/task2.php">
+	<input type="submit" value="task2">
+</form>
 
-task1();
+<form action="task3/task3.php">
+	<input type="submit" value="task3">
+</form>
